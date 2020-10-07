@@ -1,0 +1,25 @@
+# Removes directory listings
+
+Options -Indexes
+
+# Redirects HTTP to HTTPS.
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://rememberwhen.studio/$1 [R=301,L]
+
+# Strips .php file endings from URL.
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.php
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+
+# Redirects to custom error page.
+
+ErrorDocument 403 /uh-oh/
+ErrorDocument 404 /uh-oh/
