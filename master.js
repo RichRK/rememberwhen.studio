@@ -55,7 +55,7 @@ $( ".submission-response > button" ).on( "click", function( e ) { e.preventDefau
 
 // Listens for clicks on the large down arrow on the home page, then gently scrolls users to the content section.
 
-$( 'body[data-page="home"] header h1 i' ).on( "click", function( e ) { scrollTo( getOffset( $( "#content" )[0] ).top - 50 ) } );
+$( 'body[data-page="home"] header h1 i' ).on( "click", function( e ) { scrollTo( getOffset( $( "#content" )[0] ).top ) } );
 
 
 // Listens for clicks on .entry elements on the portfolio page.
