@@ -2,6 +2,5 @@
 
 TODO:
 
-1. Fix the copyright year at the bottom of each page.
-2. Fix the years in the form on the bookings page. (Previously it derived from #1.)
-4. Fix the form submission (bookings and contact)
+1. Fix the form submission (bookings and contact)
+

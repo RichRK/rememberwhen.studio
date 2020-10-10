@@ -113,6 +113,8 @@ $( 'body[data-page="contact"] form button.primary' ).on( "click", areFieldsFille
 // Functions to run on ready.
 
 $( function() {
+
+	var currentYear = new Date().getFullYear();
 	
 	storeLayoutSize();	// i.e., which layout size did the page load using?
 	waypointsLogic();
@@ -126,10 +128,13 @@ $( function() {
 
 	if ( currentPage() === "bookings" ) {
 
+		outputPossibleWeddingYears( currentYear );
 		initialiseSelectMenus();
 		calculateQuestionLength();
 		addDropdownIcons();
 	}
+
+	outputCopyrightYear( currentYear );
 });
 
 
@@ -916,6 +921,42 @@ function buildPlayerInstance( videoID ) {
 		autoplay: true,
 		loop: true
 	});
+}
+
+
+
+
+// Outputs the current year for the copyright notice at the bottom of each page.
+
+function outputCopyrightYear( currentYear ) {
+
+	$( ".currentYear" ).text( currentYear );
+}
+
+
+
+
+// Populates the bookings form with possible wedding years.
+
+function outputPossibleWeddingYears( currentYear ) {
+
+	var years = [ currentYear ],
+		yearsToGenerate = $( 'select[name="year"] option' ).length - 2;
+
+	// 'yearsToGenerate' has subtracted two because the first <option> is blank and the second one will contains the current year — which already exists in the array.
+
+	for ( var i = 0; i < yearsToGenerate; i++ ) {
+
+		// Each iteration adds a new year to the array, each incremented one more than the last.
+
+		years.push( years[years.length - 1] + 1 );
+	}
+
+	$.each( $( 'select[name="year"] option:not(:selected)' ), function( i ) {
+
+		$( this ).val( years[i] );
+		$( this ).text( years[i] );
+	})
 }
 
 
