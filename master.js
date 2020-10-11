@@ -1016,7 +1016,7 @@ function fetchVals() {
 
 	function checkIfBlank( field ) {	// This is for <option> elements. Grabs the name of the parent <select> instead.
 
-		if ( field.name.length === 0 ) {
+		if ( field.name === undefined || field.name.length === 0 ) {
 
 			return $( field ).parent( "select" ).attr( "name" );
 		}
