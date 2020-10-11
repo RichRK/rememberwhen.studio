@@ -1091,21 +1091,7 @@ function sendData( XHRstring ) {
 				formFailure();
 			}
 
-			else {
-
-				// And then here we're checking to see if the PHP executed successfully.
-				// PHP sends a response that determines this.
-
-				if ( xhr.response === "success" ) {
-
-					formSuccess();
-				}
-
-				else {
-
-					formFailure( xhr.response );
-				}
-			}
+			else { formSuccess(); }
 		}
 	}
 }
