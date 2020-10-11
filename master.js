@@ -1072,7 +1072,7 @@ function prepareString( properties, values ) {
 function sendData( XHRstring ) {
 
 	var xhr = new XMLHttpRequest(),
-		url = '../' + currentPage() + '-form.php';
+		url = '../' + currentPage();
 
 	xhr.open( 'POST', url, true );
 	xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
