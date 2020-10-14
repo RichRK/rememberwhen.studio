@@ -1671,9 +1671,10 @@ footer h6 a:hover {
 .areYouAHuman {
 
 	display: block !important;
-	top: -1000px;
-	left: -1000px;
+	top: 0px;
+	left: 0px;
 	position: fixed;
+	transform: skew(90deg);
 }
 
 
@@ -2406,7 +2407,7 @@ body[data-page="bookings"] form i.top-right {
 
 	background-color: #27445c;
 
-    transition: width .3s ease;
+	transition: width .3s ease;
 
 }
 
