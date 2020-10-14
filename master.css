@@ -1668,6 +1668,16 @@ footer h6 a:hover {
 
 
 
+.areYouAHuman {
+
+	display: block !important;
+	top: -1000px;
+	left: -1000px;
+	position: fixed;
+}
+
+
+
 
 
 
@@ -2836,16 +2846,6 @@ body[data-page="bookings"] .submission-response button {
 
 	background: #fff;
 
-}
-
-
-
-body[data-page="bookings"] .areYouAHuman {
-
-	display: block !important;
-	top: -1000px;
-	left: -1000px;
-	position: fixed;
 }
 
 
